@@ -58,4 +58,13 @@ group :production do
   gem 'pg', '1.1.4'
 end
 
+# ログイン機能
 gem 'devise'
+
+# CSSフレームワーク
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'jquery-rails'
+
+# 画像投稿機能
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem "refile-mini_magick"
