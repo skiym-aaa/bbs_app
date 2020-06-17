@@ -1,2 +1,30 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="row">
+  <div class="col-xs-12 center">
+
+    <h3>プロフィール編集</h3>
+
+    <div class="user-profile">
+      <%= form_for(@user) do |f| %>
+
+        <%= attachment_image_tag(@user, :image, :fill, 200, 200, fallback: "no_image.jpg") %>
+        <div class="field" style="padding-left: 450px">
+          <%= f.attachment_field :image, class: "user_image" %>
+        </div>
+
+        <div class="field">
+          <%= f.text_field :name, class: "name", placeholder: "名前" %>
+        </div>
+
+        <div class="field">
+          <%= f.text_area :introduction, class: "introduction", placeholder: "プロフィール" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "更新する", class: "btn btn-default" %>
+        </div>
+
+      <% end %>
+    </div>
+
+  </div>
+</div>
