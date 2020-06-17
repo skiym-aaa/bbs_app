@@ -10,6 +10,14 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/header' %>
+
+    <div class="container">
+      <!-- フラッシュメッセージを表示 -->
+      <p id ="notice"><%= notice %></p>
+      <%= yield %>
+    </div>
+
+    <%= render 'layouts/footer' %>
   </body>
 </html>
