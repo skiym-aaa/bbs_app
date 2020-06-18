@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :posts, only:[:index, :show, :new, :create] do
     resources :post_responses, only: [:create]
   end
+  resources :categories, only:[:new, :create]
 end

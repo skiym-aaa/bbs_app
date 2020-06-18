@@ -23,6 +23,12 @@
                 <%= @post.body %>
               </div>
 
+              <div class="post-category">
+                <% @post.categories.each do |category| %>
+                  <%= category.name %>
+                <% end %>
+              </div>
+
               <div class="post-user">
                 <p>By<%= link_to @post.user.name, user_path(@post.user) %>　<%= l @post.created_at %></p>
               </div>

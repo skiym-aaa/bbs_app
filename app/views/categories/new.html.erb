@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-xs-12 center">
+
+    <%= form_for @category, url: categories_path do |f| %>
+
+      <!-- エラーメッセージ -->
+      <%= render 'layouts/errors', obj: @category %>
+
+      <!-- 入力フォーム -->
+      <div class="field">
+        <%= f.label :カテゴリー　%>
+        <%= f.text_field :name %>
+      </div>
+      <div class="action">
+        <%= f.submit "追加", class: "btn btn-default" %>
+      </div>
+    <% end %>
+
+  </div>
+</div>

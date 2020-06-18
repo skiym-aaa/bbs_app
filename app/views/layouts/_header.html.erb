@@ -10,6 +10,7 @@
       <ul class="nav navbar-nav navbar-right">
 
         <% if user_signed_in? %>
+          <li><%= link_to " 新規投稿",new_post_path, class: "glyphicon glyphicon-plus" %></li>
           <li><%= link_to " マイページ",user_path(current_user), class: "glyphicon glyphicon-home" %></li>
           <li><%= link_to " ログアウト",destroy_user_session_path, method: :delete, class: 'glyphicon glyphicon-log-out logout' %></li>
 

@@ -17,6 +17,15 @@
         <%= f.text_field :article_url, class: "article_url", placeholder: "元記事URL" %>
       </div>
 
+      <div class="field">
+        <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %>
+          <%= category.label do %>
+            <%= category.check_box %>
+            <%= category.text %>
+          <% end %>
+        <% end %>
+      </div>
+
       <br>
       <div class="actions">
         <%= f.submit "新規投稿", class: "btn btn-default" %>
