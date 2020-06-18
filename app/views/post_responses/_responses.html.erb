@@ -8,7 +8,7 @@
             <li class="response">
 
               <div class="response-info">
-                <h2><%= post_response.name %>　<span class="response-time"><%= l post_response.created_at %></span></h2>
+                <h4><%= post_response.name %>　<span class="response-time"><%= l post_response.created_at %></span></h4>
               </div>
 
               <div class="response-body">
@@ -23,6 +23,7 @@
   </div>
 </div>
 
+<hr>
 <div class="row center">
   <div class="response-form">
     <h3>レスを投稿する</h3>
@@ -31,17 +32,17 @@
     <%= render 'layouts/errors', obj: post_response %>
 
       <div class="field">
-        <%= f.text_field :name, class:"name", placeholder:"名前(省略可)" %>
+        <%= f.text_field :name, class:"name", size: "41x10",  placeholder:"名前(省略可)" %>
       </div>
 
       <div class="field">
-        <%= f.text_field :email, class:"email", placeholder:"メールアドレス(省略可)" %>
+        <%= f.text_field :email, class:"email", size: "41x10", placeholder:"メールアドレス(省略可)" %>
       </div>
 
       <div class="field">
-        <%= f.text_area :body, rows:'2', class:"body", placeholder:"レスをここに" %>
+        <%= f.text_area :body, rows:'2', class:"body", size: "40x10", placeholder:"レスをここに" %>
       </div>
-      <%= f.submit "書き込む", class:"btn btn-default pull-right" %>
+      <%= f.submit "書き込む", class:"btn btn-default" %>
     <% end %>
   </div>
 </div>

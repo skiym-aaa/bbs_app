@@ -4,14 +4,16 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
+    @categories = Category.all
   end
 
   def create
-    category = Category.new(category_params)
-    if category.save
+    @category = Category.new(category_params)
+    if @category.save
       redirect_to request.referer, notice: "カテゴリーの作成が完了しました！"
     else
-      render :new
+      # FIXME: renderが失敗する
+      redirect_to request.referer
     end
   end
 

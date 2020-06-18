@@ -12,12 +12,13 @@
           <%= f.attachment_field :image, class: "user_image" %>
         </div>
 
+        <br>
         <div class="field">
-          <%= f.text_field :name, class: "name", placeholder: "名前" %>
+          <%= f.text_field :name, class: "name", size: "41x10", placeholder: "名前" %>
         </div>
 
         <div class="field">
-          <%= f.text_area :introduction, class: "introduction", placeholder: "プロフィール" %>
+          <%= f.text_area :introduction, class: "introduction", size: "40x5", placeholder: "プロフィール" %>
         </div>
 
         <div class="actions">

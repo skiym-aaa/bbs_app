@@ -8,9 +8,11 @@
       <h2><%= @user.name %></h2>
       <p><%= @user.id %></p>
       <%= @user.introduction %>
-      <br>
 
-      <%= link_to "プロフィールを編集",edit_user_path(@user), class: "btn btn-info" %>
+      <br>
+      <% if user_signed_in? && @user.id == current_user.id %>
+        <%= link_to "プロフィールを編集",edit_user_path(@user), class: "btn btn-info" %>
+      <% end %>
     </div>
 
   </div>

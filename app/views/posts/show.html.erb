@@ -3,7 +3,7 @@
 
     <div class="masonry-wrapper-cols">
       <div class="row">
-        <div class="col-md-8 col-sm-offset-2">
+        <div class="col-md-10 col-sm-offset-1">
 
           <div class="masonry-block">
 
@@ -11,24 +11,28 @@
 
               <div class="post-title">
                 <%= link_to post_path(@post) do %>
-                  <%= @post.title %>
+                  <h3><%= @post.title %></h3>
                 <% end %>
               </div>
 
+              <br>
               <div class="post-url">
                 元記事URL：<%= link_to @post.article_url, @post.article_url %>
               </div>
 
+              <br>
               <div class="post-body">
                 <%= @post.body %>
               </div>
 
+              <br>
               <div class="post-category">
                 <% @post.categories.each do |category| %>
-                  <%= category.name %>
+                  <span class="label label-primary"><%= category.name %></span>
                 <% end %>
               </div>
 
+              <br>
               <div class="post-user">
                 <p>By<%= link_to @post.user.name, user_path(@post.user) %>　<%= l @post.created_at %></p>
               </div>
