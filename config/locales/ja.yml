@@ -17,6 +17,18 @@ ja:
         introduction: "プロフィール"
         image_id: "プロフィール画像"
         remember_me: "次回から自動的にログイン"
+      post:
+        title: "タイトル"
+        body: "本文"
+        article_url: "元記事URL"
+      post_response:
+        name: "名前"
+        email: "メールアドレス"
+        body: "本文"
+    models:
+      user: "ユーザー"
+      post: "投稿"
+      post_response: "レス"
 
   date:
     abbr_day_names:
@@ -212,7 +224,7 @@ ja:
   time:
     am: 午前
     formats:
-      default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
+      default: "%Y/%m/%d %H:%M:%S"
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後

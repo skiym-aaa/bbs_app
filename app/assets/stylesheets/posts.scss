@@ -1,3 +1,14 @@
-// Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+/* 一覧コンテンツ */
+.masonry-wrapper-cols {
+  background-color: #EAEBED;
+  text-align: center;
+}
+
+.masonry-block {
+  margin: 50px 0;
+  background-color: #FFFFFF;
+}
+
+.block-content ul li {
+  list-style: none;
+}

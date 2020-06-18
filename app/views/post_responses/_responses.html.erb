@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="responses pull-left">
+    <div class="responses-list">
+      <div class="float-wrapper">
+
+        <ol>
+          <% post.post_responses.each do |post_response| %>
+            <li class="response">
+
+              <div class="response-info">
+                <h2><%= post_response.name %>　<span class="response-time"><%= l post_response.created_at %></span></h2>
+              </div>
+
+              <div class="response-body">
+                <%= post_response.body %>
+              </div>
+            </li>
+          <% end %>
+        </ol>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row center">
+  <div class="response-form">
+    <h3>レスを投稿する</h3>
+    <%= form_with model: [post, post_response], url: post_post_responses_path(post.id), method: :post do |f| %>
+
+    <%= render 'layouts/errors', obj: post_response %>
+
+      <div class="field">
+        <%= f.text_field :name, class:"name", placeholder:"名前(省略可)" %>
+      </div>
+
+      <div class="field">
+        <%= f.text_field :email, class:"email", placeholder:"メールアドレス(省略可)" %>
+      </div>
+
+      <div class="field">
+        <%= f.text_area :body, rows:'2', class:"body", placeholder:"レスをここに" %>
+      </div>
+      <%= f.submit "書き込む", class:"btn btn-default pull-right" %>
+    <% end %>
+  </div>
+</div>

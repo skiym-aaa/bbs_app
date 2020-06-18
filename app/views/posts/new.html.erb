@@ -1,2 +1,27 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<div class="row">
+  <div class="col-xs-12 center">
+    <h2>新規投稿</h2>
+
+    <%= form_for(@post) do |f| %>
+      <%= render 'layouts/errors', obj: @post %>
+
+      <div class="field">
+        <%= f.text_field :title, class: "title", placeholder: "タイトル" %>
+      </div>
+
+      <div class="field">
+        <%= f.text_area :body, class: "body", placeholder: "本文" %>
+      </div>
+
+      <div class="field">
+        <%= f.text_field :article_url, class: "article_url", placeholder: "元記事URL" %>
+      </div>
+
+      <br>
+      <div class="actions">
+        <%= f.submit "新規投稿", class: "btn btn-default" %>
+      </div>
+    <% end %>
+
+  </div>
+</div>

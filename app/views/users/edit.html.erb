@@ -5,9 +5,10 @@
 
     <div class="user-profile">
       <%= form_for(@user) do |f| %>
+        <%= render 'layouts/errors', obj: @user %>
 
         <%= attachment_image_tag(@user, :image, :fill, 200, 200, fallback: "no_image.jpg") %>
-        <div class="field" style="padding-left: 450px">
+        <div class="field">
           <%= f.attachment_field :image, class: "user_image" %>
         </div>
 

@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2020_06_16_144332) do
 
   create_table "post_responses", force: :cascade do |t|
     t.integer "post_id"
-    t.string "name"
+    t.string "name", default: "名無しさん＠恐縮です"
     t.string "email"
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_06_16_144332) do
 
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
+    t.string "title"
     t.text "body"
     t.string "article_url"
     t.datetime "created_at", precision: 6, null: false

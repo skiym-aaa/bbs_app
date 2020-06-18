@@ -1,0 +1,41 @@
+<% if posts.empty? %>
+
+  <p>投稿はありません</p>
+
+<% else %>
+
+  <div class="masonry-wrapper-cols">
+    <div class="row">
+      <div class="col-md-8 col-sm-offset-2">
+        <% posts.each do |post| %>
+          <div class="masonry-block">
+
+            <div class="block-content">
+
+              <div class="post-title">
+                <%= link_to post_path(post) do %>
+                  <%= post.title %>
+                <% end %>
+              </div>
+
+              <div class="post-url">
+                元記事URL：<%= link_to post.article_url, post.article_url %>
+              </div>
+
+              <div class="post-body">
+                <%= post.body %>
+              </div>
+
+              <div class="post-user">
+                <p>By<%= link_to post.user.name, user_path(post.user) %>　<%= l post.created_at %></p>
+              </div>
+
+            </div>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+
+<% end %>
