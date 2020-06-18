@@ -6,5 +6,5 @@ class Post < ApplicationRecord
 
   validates :title, presence: true
   validates :body, presence: true
-  validates :article_url, format: /\A#{URI::regexp(%w(http https))}\z/, allow_blank: true
+  validates :article_url, format: /\A#{URI::regexp(%w(http https))}\z/
 end
